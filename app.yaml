@@ -1,0 +1,18 @@
+application: empathy-awareness-sensitivity
+
+version: 1
+runtime: go
+api_version: go1
+
+handlers:
+- url: /favicon\.ico
+  static_files: public/img/favicon.ico
+  upload: public/img/favicon.ico
+
+- url: (/admin)(/.*)?
+  script: _go_app
+  login: admin
+  secure: always
+
+- url: /.*
+  script: _go_app

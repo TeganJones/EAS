@@ -1,0 +1,83 @@
+// Services Block
+.services-block {
+  margin-top: -100px;
+  position: relative;
+  @include breakpoint(m) {
+    margin-top: -80px;
+  }
+}
+.services-list {
+  list-style: none;
+  padding: 15px 0 0 0;
+  text-align: center;
+}
+.service-item {
+  @include font-size(13);
+  @include line-height(20);
+  color: $mid-grey;
+  padding-left: 5px;
+  padding-right: 5px;
+  min-height: 240px;
+  @include breakpoint(m) {
+    min-height: 280px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @include breakpoint(l) {
+    min-height: 210px;
+  }
+  p { margin: 0; }
+}
+.service-item-heading {
+  text-transform: capitalize;
+  color: $dark-grey;
+  &:after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: $pink;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+// Icons
+.service-icon {
+  &:before {
+    content: "";
+    display: block;
+    background-image: url(../img/service-icons.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border: 3px solid $pink;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.service-icon-performance:before { background-position: -73px -153px; }
+.service-icon-customer:before { background-position: -72px 6px; }
+.service-icon-it:before { background-position: 7px -73px; }
+.service-icon-transformation:before { background-position: 7px 6px; }
+.service-icon-strategy:before { background-position: -149px 6px; }
+.service-icon-equity:before { background-position: -312px 6px; }
+.service-icon-digital:before { background-position: -233px 7px; }
+.service-icon-delivery:before { background-position: 9px -154px; }
+
+
+// Services Block Animations
+.services-block.active {
+  .content-block-inner {
+    @include animation(1s);
+    animation-delay: .2s;
+    @extend .fade-in;
+  }
+  .service-item {
+    @include animation(1s);
+    animation-delay: .4s;
+    @extend .fade-in;
+  }
+}
